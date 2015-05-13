@@ -1,0 +1,22 @@
+
+#container {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 200px ;
+  left: 700px;
+  cursor: pointer;
+}
+
+.gameBoard {
+  width: 150px; 
+  height: 150px; 
+  vertical-align: middle;
+  border: 1px solid black; 
+  display: inline-block;
+  font-size: 30px;
+  font-family: helvetica; 
+  text-align: center;
+
+
+}
