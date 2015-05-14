@@ -1,14 +1,22 @@
 var move = 0;
 var id = 0;
-var playerWinX = 'XXX';
-var playerWinO = 'OOO';
 
-var playerMove = function() {
-  console.log("haa")
+//        player turn function        //
+var playerMove = function() { 
+    // If it doesnt have the class selected, do everything in this function
+    // If it didnt have the class selected (if it got into the if statement)
+    // Add the class selected to that element
+    // The reason we do this is so that the next time this function runs, this element will have the class selected and not go into the if statement
+
+
+
+
+if (!$(this).hasClass('selected')) {  //logical operator !, if it doesn't have the class selected. then
+$(this).addClass('selected')        // if this doesn't the class selected THEN add the class
   if (move === 0) {
     $(this).html('X');
     move += 1;
-    id = parseInt($(this).attr('id')) -1; // id = key 
+    id = parseInt($(this).attr('id')) -1 ; // pushing the id of the box into the array
     gameValue[id] = 'X'; // inserting the value to the key
     console.log(id); //the key to assign the value 
     console.log(gameValue); //display the array 
@@ -16,102 +24,106 @@ var playerMove = function() {
   } else {
     $(this).html('O');
     move -= 1;
-    id = parseInt($(this).attr('id')) -1;  //change the string into a number
-    gameValue[id] = 'O';         // push the ID into the array
+    id = parseInt($(this).attr('id')) -1 ; //change the string into a number
+    gameValue[id] = 'O'; // push the ID into the array
     console.log(id); //
     console.log(gameValue); //display the array
   }
-  endGame();
+  endGame(); }
 };
+
 
 $(".gameBoard").on('click', playerMove);
 
 
 // creating an array to store the moves, subsequently to determined who wins the game. 
 
-var gameValue = ["","","","","","","","",""]
+var gameValue = ["", "", "", "", "", "", "", "", ""]
 
 
-// var winGame = function() {
-//   if (gameValue.indexOf(1) > -1 && gameValue.indexOf(2) > -1 && gameValue.indexOf(3) > -1) {    //if the index is false 
-//     alert("woo")
-//   } else if (gameValue.indexOf(4) > -1 && gameValue.indexOf(5) > -1 && gameValue.indexOf(6) > -1) {
-//     alert ("woo")
-//   } else if (gameValue)   //insert the else if for winGame conditions in here. 
-// }
 
-var winGame = function (a,b,c) {
-  return $('#' + a).text() + $('#' + b).text() + $('#' + c).text();     // spit out the results so it can be used again.
+//        win game function        //
+
+var winGame = function(a, b, c) { // spit out the results so it can be used again.
+  return $('#' + a).text() + $('#' + b).text() + $('#' + c).text();
 }
 
+
+
+var noMove = function (a,b,c) {
+  if ($('#' + a).text() === ('X') || $('#' + b).text  || $('#' + c).text === O || X ); {
+    console.log($('#sidePanel').html('that move is not allowed'));
+  }
+};
+
+
 var endGame = function() {
-    if (winGame(1, 2, 3) === 'XXX' || winGame(1, 2, 3) === 'OOO') {
-      console.log('you win!')
+  if (winGame(1, 2, 3) === 'XXX') {
+    $('h1').html('player X has won');
 
-    } else if (winGame(4, 5, 6) === 'XXX' || winGame(4, 5, 6) === 'OOO') {
-      console.log('you win!')
+  } else if (winGame(1, 2, 3) === 'OOO') {
+    $('h1').html('player O has won');
 
-    } else if (winGame(7, 8, 9) === 'XXX' || winGame(7, 8, 9) === 'OOO') {
-      console.log('you win!')
+  } else if (winGame(4, 5, 6) === 'XXX') {
+    $('h1').html('player X has won');
 
-    } else if (winGame(1, 4, 7) === 'XXX' || winGame(1, 4, 7) === 'OOO') {
-      console.log('you win!')
+  } else if (winGame(4, 5, 6) === 'OOO') {
+    $('h1').html('player O has won');
 
-    } else 
-        //     (gameWinH2 === 'XXX' || 'OOO'){
-        //   } else if 
-        //     (gameWinH3 === 'XXX' || 'OOO'){
-        //   } else if  
-        //     (gamewinV1 === 'XXX' || 'OOO'){ 
-        //   } else if  
-        //     (gamewinV2 === 'XXX' || 'OOO'){
-        //   } else if   
-        //     (gamewinV3 === 'XXX' || 'OOO'){
-        //   } else if 
-        //     (gamewinD1 === 'X','X','X' || 'O','O','O'){
-        //   } else  {
-        //     (gamewinD2 === 'X','X','X' || 'O','O','O');
-        // }
-        // };
-    }
-  //var noMove = function () { 
+  } else if (winGame(7, 8, 9) === 'XXX') {
+    $('h1').html('player X has won');
 
-//  if (playerMove < ) { 
+  } else if (winGame(7, 8, 9) === 'OOO') {
+    $('h1').html('player O has won');
 
-// }
+  } else if (winGame(1, 4, 7) === 'XXX') {
+    $('h1').html('player X has won');
 
-// }
+  } else if (winGame(1, 4, 7) === 'OOO') {
+    $('h1').html('player O has won');
 
+  } else if (winGame(2, 5, 8) === 'XXX') {
+    $('h1').html('player X has won');
 
+  } else if (winGame(2, 5, 8) === 'OOO') {
+    $('h1').html('player O has won');
 
+  } else if (winGame(3, 6, 9) === 'XXX') {
+    $('h1').html('player X has won');
 
-//   var createBoard = function (boxCount) {
-//     for (var i= 0; i < boxCount; i++ ) {
-//       $('<div></div>').addClass('gameBoard').appendTo('#container');
-//     }
-//   }
+  } else if (winGame(3, 6, 9) === 'OOO') {
+    $('h1').html('player O has won');
 
-//   createBoard (9); 
+  } else if (winGame(1, 5, 9) === 'XXX') {
+    $('h1').html('player X has won');
 
-// }); 
+  } else if (winGame(1, 5, 9) === 'OOO') {
+    $('h1').html('player O has won');
 
-// var toggleColor = 0 ;
-// var currentColor = 'red';
+  } else if (winGame(3, 5, 7) === 'XXX') {
+    $('h1').html('player X has won');
 
-// $( ".gameBoard" ).click(function() {
+  } else if (winGame(3, 5, 7) === 'OOO') {
+    $('h1').html('player O has won');
 
-//  var color = $(this).css('background-color');
-//  console.log(color);
-//  $(this).css({'background-color': currentColor});
+  }
+};
 
 
+//          reset game function      ///
+var resetGame = function () {
+  $('.gameBoard').html('');
+  gameValue = ["", "", "", "", "", "", "", "", ""]; //resets array 
+  move = 0;         //resets the move back to zero 
+  $('h1').html('tic tac toe');      //resets the heading
+  console.clear(); //clears the console 
+  $('.selected').removeClass('selected'); //remove any existing class that has been selected
+};
 
-//   if (currentColor === 'red') {
-//       currentColor = 'yellow';
-//   } else if (currentColor === 'yellow') {
-//       currentColor = 'red';
-//   } 
-//$(this).css('background-color', 'green');
-//   });
+$("#reset").on('click', resetGame);
 
-// });
+
+
+
+
+
