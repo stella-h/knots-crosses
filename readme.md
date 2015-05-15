@@ -1,9 +1,4 @@
-  .                   .                        .                 
- _/_   `   ___       _/_     ___    ___       _/_     __.    ___ 
-  |    | .'   `       |     /   ` .'   `       |    .'   \ .'   `
-  |    | |            |    |    | |            |    |    | |----'
-  \__/ /  `._.'       \__/ `.__/|  `._.'       \__/  `._.' `.___,
-                                                                 
+Tic Tac Toe                                                               
 
 features
 - announces the winner
@@ -12,7 +7,12 @@ features
 - disable clicking on filled square
 
 approach 
-- 
+- div to contain the gameboard
+- div for the individual gameboard
+- player turn function 
+- array to store game data
+- function win game data
+- reset game, empty array, clear everything, change heading back. 
 
 if given more time, some features that would be good to add,
 - player move indicator (who's turn)
