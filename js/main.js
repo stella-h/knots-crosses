@@ -166,10 +166,9 @@ var offBox = function() {
 $('.gameBoard').on('mouseover', overBox);
 $('.gameBoard').on('mouseleave', offBox);
 
-<<<<<<< HEAD
-=======
+
 // THANK YOU JOSH! 
->>>>>>> master
+
 
 
 
