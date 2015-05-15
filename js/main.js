@@ -1,3 +1,4 @@
+
 var move = 0;
 var id = 0;
 
@@ -18,7 +19,10 @@ var playerMove = function() {
 
 
 if (!$(this).hasClass('selected')) {   
-$(this).addClass('selected')           // if this doesn't the class selected THEN add the class
+
+// $(this).addClass('selected')           // if this doesn't the class selected THEN add the class
+$(this).addClass('selected')           // reset function. THANK U WOLF! (jack)
+
   if (move === 0) {
     $(this).html('X');
     move += 1;
@@ -117,6 +121,8 @@ var endGame = function() {
   }
 };
 
+// win game function, THANK YOU MARIO! 
+
 
 /*
 #     _   _   _   _   _     _   _   _   _     _   _   _   _   _   _   _   _   
@@ -124,6 +130,7 @@ var endGame = function() {
 #   ( R | E | S | E | T ) ( G | A | M | E ) ( F | U | N | C | T | I | O | N ) 
 #    \_/ \_/ \_/ \_/ \_/   \_/ \_/ \_/ \_/   \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
 */
+
 
 var resetGame = function () {
   $('.gameBoard').html('');
@@ -159,6 +166,10 @@ var offBox = function() {
 $('.gameBoard').on('mouseover', overBox);
 $('.gameBoard').on('mouseleave', offBox);
 
+<<<<<<< HEAD
+=======
+// THANK YOU JOSH! 
+>>>>>>> master
 
 
 
@@ -175,4 +186,5 @@ $('.gameBoard').on('mouseleave', offBox);
 // };
 
 //<a href="http://imgur.com/wVFMQwM"><img src="http://i.imgur.com/wVFMQwM.gif" title="source: imgur.com" /></a
+
 //$(this).append('<img src="http://i.imgur.com/wVFMQwM.gif">');
